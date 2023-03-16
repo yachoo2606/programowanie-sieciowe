@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
     resConDesc = accept(resDesc, (struct sockaddr*) &rescaddr, &sl);
     rc = read(resConDesc,buf,256);
     close(resConDesc);
-    printf("Rec Data: %s",buf);
+    printf("Rec Data: %s\n",buf);
     connect(secondDesc, (struct sockaddr*) &saddr, sizeof(saddr));
     write(secondDesc, buf,rc);
     close(secondDesc);
