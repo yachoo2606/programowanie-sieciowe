@@ -29,4 +29,5 @@ int main(int argc, char **argv){
         printf("Invalid arguments. Use:\n%s <interface> 1 to turn on the interface.\n%s <interface> 0 to turn down the interface.\n", argv[0], argv[0]);
         exit(1);
     }
+    exit(0);
 }
