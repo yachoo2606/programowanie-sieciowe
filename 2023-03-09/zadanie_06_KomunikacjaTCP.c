@@ -39,23 +39,28 @@ int main(int argc, char** argv) {
 
   addrent = gethostbyname(argv[1]);
   secondDesc = socket(PF_INET, SOCK_STREAM,0);
-  memset(&saddr,0,sizeof(saddr));
-  saddr.sin_family = AF_INET;
-  saddr.sin_port = htons(atoi(argv[2]));
-  memcpy(&saddr.sin_addr.s_addr, addrent->h_addr, addrent->h_length);
+  
   
 
 
   while(1) {
     memset(&rescaddr, 0, sizeof(rescaddr));
     sl = sizeof(rescaddr);
+    // printf("waiting for connection\n\n");
     resConDesc = accept(resDesc, (struct sockaddr*) &rescaddr, &sl);
     rc = read(resConDesc,buf,256);
     close(resConDesc);
     printf("Rec Data: %s\n",buf);
+
+    memset(&saddr,0,sizeof(saddr));
+    saddr.sin_family = AF_INET;
+    saddr.sin_port = htons(atoi(argv[2]));
+    memcpy(&saddr.sin_addr.s_addr, addrent->h_addr, addrent->h_length);
+
     connect(secondDesc, (struct sockaddr*) &saddr, sizeof(saddr));
+    // printf("send message\n");
     write(secondDesc, buf,rc);
-    close(secondDesc);
+    // close(secondDesc);
   }
   return EXIT_SUCCESS;
 }
