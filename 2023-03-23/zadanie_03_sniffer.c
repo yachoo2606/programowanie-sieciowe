@@ -55,6 +55,8 @@ int main(int argc, char** argv) {
            fhead->h_dest[3], fhead->h_dest[4], fhead->h_dest[5]);
     printf("%d | ", sall.sll_pkttype);
     printf("%d\n",fhead->h_proto);
+    printf("%s\n",fdata);
+
     for (i = 0; i < len ; i++) {
       printf("%02x ", (unsigned char) frame[i]);
       if ((i + 1) % 16 == 0)
