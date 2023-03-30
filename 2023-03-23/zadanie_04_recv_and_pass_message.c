@@ -84,6 +84,7 @@ int main(int argc, char** argv) {
     free(frame);
     free(frame2);
     close(sfd2);
+  
   }
   close(sfd);
   return EXIT_SUCCESS;
