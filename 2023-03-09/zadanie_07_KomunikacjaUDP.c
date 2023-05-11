@@ -1,5 +1,5 @@
 /*
- * Compilation:  gcc -Wall ./zadanie_06_KomunikacjaTCP.c -o ./program
+ * Compilation:  gcc -Wall ./zadanie_07_KomunikacjaUDP.c -o ./program
  * Usage:        ./program
  */
 
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
   ressaddr.sin_family = AF_INET;
   ressaddr.sin_addr.s_addr = INADDR_ANY;
   ressaddr.sin_port = htons(1234);
-  resDesc = socket(PF_INET, SOCK_STREAM, 0);
+  resDesc = socket(PF_INET, SOCK_DGRAM, 0);
   setsockopt(resDesc, SOL_SOCKET, SO_REUSEADDR, (char*) &on, sizeof(on));
   bind(resDesc, (struct sockaddr*) &ressaddr, sizeof(ressaddr));
   listen(resDesc, 5);
