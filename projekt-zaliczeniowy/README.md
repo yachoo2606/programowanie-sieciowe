@@ -11,7 +11,7 @@ make
 ```
 
 ## run
-to run program type in console: 
+to run program (root required) type in console: 
 ```
 ./program <interface> <startingIP> <endingIP> <mask> <default gateway> <leese time> <DNSaddr>
 ```
