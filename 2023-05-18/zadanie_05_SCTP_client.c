@@ -1,8 +1,8 @@
 /*
  * Copyright (C) 2023 Michal Kalewski <mkalewski at cs.put.poznan.pl>
  *
- * Compilation:  gcc -Wall ./sctpmh-server.c -o ./sctpmh-server -lsctp
- * Usage:        ./sctpmh-server
+ * Compilation:  gcc -Wall ./sctpmh-client.c -o ./sctpmh-client -lsctp
+ * Usage:        ./sctpmh-client
  *
  * Bug reports:  https://gitlab.cs.put.poznan.pl/mkalewski/ps-2023/issues
  *
